@@ -32,6 +32,32 @@ A production-ready funnel analytics platform that visualizes user journey throug
    - **API Server**: http://localhost:8000
    - **Health Check**: http://localhost:8000/health
 
+### Using Pre-built Docker Images
+
+Pre-built images are automatically published to GitHub Container Registry on every push to `main`:
+
+```bash
+# Pull latest images
+docker pull ghcr.io/OWNER/REPO/server:latest
+docker pull ghcr.io/OWNER/REPO/client:latest
+
+# Or use in docker-compose.yml
+services:
+  server:
+    image: ghcr.io/OWNER/REPO/server:latest
+  client:
+    image: ghcr.io/OWNER/REPO/client:latest
+```
+
+**Available tags:**
+- `latest` - Latest stable build from main branch
+- `v1.0.0` - Semantic version tags
+- `main-abc123` - Commit SHA tags for specific builds
+
+**Workflows:**
+- [`.github/workflows/publish-server.yml`](.github/workflows/publish-server.yml) - Publishes server image
+- [`.github/workflows/publish-client.yml`](.github/workflows/publish-client.yml) - Publishes client image
+
 ## Technology Stack
 
 ### Frontend
