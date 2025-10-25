@@ -239,6 +239,8 @@ GET /api/v1/campaigns/first-view-insights?startDate=...&endDate=...
 
 ## Testing
 
+### Local Testing
+
 ```bash
 # Run unit tests
 cd server
@@ -250,6 +252,16 @@ npm run test:coverage
 # Watch mode
 npm run test:watch
 ```
+
+### CI/CD Testing
+
+GitHub Actions automatically runs the test suite on every push and pull request:
+
+- **Workflow**: [`.github/workflows/test.yml`](.github/workflows/test.yml)
+- **Test Coverage**: Generated and uploaded as build artifacts
+- **Dependencies**: Cached for faster builds
+
+View test results in the [Actions tab](../../actions) of this repository.
 
 ## Contributing
 
